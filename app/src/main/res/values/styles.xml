@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="Widget.Theme.Bonk.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.Bonk.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+    <style name="mainButton" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/colour_palate_3</item>
+    </style>
+
+    <style name="otherButton" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/white</item>
+    </style>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NewPostActivity"
+    android:padding="25dp">
+
+    <TextView
+        android:id="@+id/new_post_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="@string/title_new_post"
+        android:textAlignment="center"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="40sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:inputType="textMultiLine"
+        android:id="@+id/new_post_content"
+        android:hint="@string/new_post_placeholder"
+        android:textAlignment="textStart"
+        android:autofillHints="content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_add_picture_camera_black_24"
+            android:id="@+id/add_photo_with_camera"
+            android:contentDescription="@string/attach_camera_image_to_post"
+            android:onClick="attachCameraImage"
+            android:backgroundTint="@color/colour_palate_2" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_add_photo_black_24"
+            android:id="@+id/add_photo"
+            android:contentDescription="@string/attach_image_to_post"
+            android:onClick="attachImage"
+            android:backgroundTint="@color/colour_palate_2" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_new_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colour_palate_2"
+        android:onClick="createNewPost"
+        android:text="@string/new_post_btn"
+        android:textAlignment="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/new_post_files_recycler" />
+
+</LinearLayout>

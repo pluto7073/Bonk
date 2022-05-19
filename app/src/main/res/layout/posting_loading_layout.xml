@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/user_viewer_pfp_thing_card"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:elevation="12dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="10dp">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/posting___"
+            android:fontFamily="monospace"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal" />
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
