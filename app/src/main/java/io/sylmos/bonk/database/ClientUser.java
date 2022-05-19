@@ -25,10 +25,12 @@ public class ClientUser extends DatabaseUser {
 
     public void addSubscription(String id) {
         this.following.add(id);
+        this.saveInDB();
     }
 
     public void removeSubscription(String id) {
         this.following.remove(id);
+        this.saveInDB();
     }
 
     public boolean isSubscribedTo(String id) {

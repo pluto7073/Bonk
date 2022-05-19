@@ -56,12 +56,12 @@ public class StorageManager {
         TaskExtender<File> extender = new TaskExtender<File>("FileDownloadTask") {
             @Override
             public void complete() {
-                if (downloadedFiles.containsKey(file)) {
+                if (/*downloadedFiles.containsKey(file)*/0 == 1) {
                     this.setResult(new File(downloadedFiles.get(file)));
                     this.markComplete(true);
                 } else {
                     File f = new File(MainActivity.dis.getFilesDir(), file);
-                    f.mkdirs();
+                    f.getParentFile().mkdirs();
                     StorageReference fileRef = storage.getReference(file);
                     try {
                         f.createNewFile();

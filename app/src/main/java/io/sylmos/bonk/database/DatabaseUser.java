@@ -55,9 +55,17 @@ public class DatabaseUser extends Base {
         } else refreshFromDB();
     }
 
+    public int followersCount() {
+        return followers.size();
+    }
+
+    public int followingCount() {
+        return following.size();
+    }
+
     public UserPostManager posts() {
         if (postManager == null) {
-            postManager = new UserPostManager(id);
+            postManager = new UserPostManager(this);
         }
         return postManager;
     }
@@ -157,10 +165,18 @@ public class DatabaseUser extends Base {
         return taskExtender;
     }
 
-    public void startFollowing() {
+    public void follow() {
         if (AccountManager.INSTANCE.user.id.equals(this.id)) return;
         followers.add(AccountManager.INSTANCE.user.id);
+        saveInDB();
         AccountManager.INSTANCE.user.addSubscription(this.id);
+    }
+
+    public void unfollow() {
+        if (AccountManager.INSTANCE.user.id.equals(this.id)) return;
+        followers.remove(AccountManager.INSTANCE.user.id);
+        saveInDB();
+        AccountManager.INSTANCE.user.removeSubscription(this.id);
     }
 
 }

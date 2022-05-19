@@ -43,7 +43,7 @@ public class PostViewerActivity extends AppCompatActivity {
         DatabaseUser user = new DatabaseUser(currentPost.author, true);
         user.avatar().then((successful1, result1) -> {
             InputStream stream = (InputStream) result1;
-            Bitmap bitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeStream(stream), 150, 150, false);
+            Bitmap bitmap = BitmapFactory.decodeStream(stream);
             ((ImageButton) findViewById(R.id.post_pfp)).setImageBitmap(bitmap);
         });
         ((TextView) findViewById(R.id.post_username)).setText(user.username);

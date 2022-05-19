@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
+import io.sylmos.bonk.accounts.AccountManager;
 import io.sylmos.bonk.storage.StorageManager;
 import io.sylmos.bonk.utils.EmptyTask;
 import io.sylmos.bonk.utils.TaskExtender;
@@ -126,6 +127,7 @@ public class PostManager extends ArrayList<Long> {
                         PostManager.this.add(id);
                         PostManager.this.saveInDB();
                         setResult(post);
+                        AccountManager.INSTANCE.user.posts().post(post, files);
                         markComplete(true);
                     } else {
                         markComplete(false);

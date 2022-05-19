@@ -64,7 +64,7 @@ public class PostViewerRecyclerAdapter extends RecyclerView.Adapter<PostViewerRe
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageButton image;
+        ImageView image;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

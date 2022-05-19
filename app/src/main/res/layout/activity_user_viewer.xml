@@ -54,17 +54,63 @@
                 android:backgroundTint="@color/colour_palate_4"
                 android:text="@string/follow" />
 
-            <Button
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/message_btn"
-                android:text="@string/message"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/colour_palate_4" />
+                android:orientation="horizontal" >
+
+                <LinearLayout android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/followers_box" >
+
+                    <TextView android:padding="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20sp"
+                        android:text="@string/zero"
+                        android:id="@+id/followers_count" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="@string/followers" />
+
+                </LinearLayout>
+
+                <LinearLayout android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/following_box" >
+
+                    <TextView android:padding="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20sp"
+                        android:text="@string/zero"
+                        android:id="@+id/following_count" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="@string/following" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
+
+
 
     <TextView
         android:id="@+id/userAboutView"
